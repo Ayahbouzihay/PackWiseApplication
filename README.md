@@ -24,6 +24,11 @@ PackPoint is a popular packing app available on both web and mobile platforms, p
 ### Website C: TripIt
 
 TripIt is a comprehensive travel planning platform offering itinerary management, booking organization, and real-time updates for travelers. The website features a sleek design and robust functionality, utilizing advanced front-end frameworks like Angular or Vue.js and back-end technologies such as Node.js or Java. With its feature-rich platform and user-friendly interface, TripIt remains a top choice for frequent travelers seeking comprehensive travel organization tools.
+## Git Reositories 
+### Weather-API (https://github.com/robertoduessmann/weather-api)
+This repository offers an API for retrieving weather data from various sources, providing code snippets and examples for seamless integration into applications. The README provides clear instructions on installation, usage, and available endpoints, along with examples of API responses and error handling, making it a valuable resource for developers seeking weather data programmatically.
+### Packing-List-App (https://github.com/jessekorzan/packing-list-app)  
+hosts code for a packing list application, relevant for projects involving personalized packing recommendations based on weather predictions. The README presents an overview of the application's features, installation instructions, and usage guidelines, supplemented with screenshots and descriptions of key functionalities. This practical solution for managing packing lists aligns well with the project's objectives, with the README effectively communicating functionality and usage for developers in similar endeavors.
 
 ## Future Enhancements
 
