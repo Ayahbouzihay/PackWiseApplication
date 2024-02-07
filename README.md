@@ -32,7 +32,7 @@ hosts code for a packing list application, relevant for projects involving perso
 
 ## Future Enhancements
 
-- Integration of additional travel-related features such as flight and hotel booking.
+- Integration of additional travel-related features such as trip type: hiking/ leisure/ surfing.
 - Integrating Weather data into the web app.
 
 ## Reflection on Resources
