@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackWiseAPI", "PackWiseAPI\PackWiseAPI.csproj", "{AD4BDCA6-D985-4983-AE46-7F69E0BEDDF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{55EE9319-91B8-4C4F-965A-E03A95307EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55EE9319-91B8-4C4F-965A-E03A95307EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55EE9319-91B8-4C4F-965A-E03A95307EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD4BDCA6-D985-4983-AE46-7F69E0BEDDF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD4BDCA6-D985-4983-AE46-7F69E0BEDDF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD4BDCA6-D985-4983-AE46-7F69E0BEDDF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD4BDCA6-D985-4983-AE46-7F69E0BEDDF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
