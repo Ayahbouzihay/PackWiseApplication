@@ -17,7 +17,7 @@ namespace PackWiseAPI.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate)
+        public async Task<List<PackingRecommendation>> getPackingRecommendations(string travelerId, DateTime tripDate)
         {
             var travelerIdParam = new SqlParameter("@TravelerID", travelerId);
             var tripDateParam = new SqlParameter("@TripDate", tripDate);
