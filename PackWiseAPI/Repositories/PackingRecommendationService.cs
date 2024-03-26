@@ -30,5 +30,10 @@ namespace PackWiseAPI.Repositories
         
             return packingRecommendations;
         }
+
+        public Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
