@@ -10,7 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackWiseAPI", "PackWiseAPI\PackWiseAPI.csproj", "{AD4BDCA6-D985-4983-AE46-7F69E0BEDDF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackWiseAPI", "PackWiseAPI\PackWiseAPI.csproj", "{AD4BDCA6-D985-4983-AE46-7F69E0BEDDF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55EE9319-91B8-4C4F-965A-E03A95307EC1} = {55EE9319-91B8-4C4F-965A-E03A95307EC1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
