@@ -12,6 +12,7 @@ namespace PackWiseAPI.Entities
         [ForeignKey("Traveler")]
         public int TravelerID { get; set; }
 
+        [Required]
         public DateTime Date { get; set; }
 
         [ForeignKey("TripCategory")]
@@ -20,6 +21,7 @@ namespace PackWiseAPI.Entities
         [ForeignKey("WeatherCriteria")]
         public int CriteriaID { get; set; }
 
+        [Required]
         public string Recommendations { get; set; }
 
         // Navigation properties
