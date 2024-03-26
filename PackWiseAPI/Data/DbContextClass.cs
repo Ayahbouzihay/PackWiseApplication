@@ -8,5 +8,7 @@ namespace PackWiseAPI.Data
         public DbContextClass(DbContextOptions<DbContextClass> options) : base(options)
         { }
         public DbSet<TripCategory> TripCategory { get; set; }
+        public DbSet<PackingRecommendation> PackingRecommendation { get; set; }
+
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using PackWiseAPI.Repositories;
 
 
-namespace PackWiseAPI.Repositiories
+namespace PackWiseAPI.Repositories
 {
     public class TripCategoryService : ITripCategoryService
     {
