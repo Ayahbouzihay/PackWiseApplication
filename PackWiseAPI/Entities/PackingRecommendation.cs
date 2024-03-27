@@ -28,6 +28,8 @@ namespace PackWiseAPI.Entities
         public Traveler Traveler { get; set; }
         public TripCategory TripCategory { get; set; }
         public WeatherCriteria WeatherCriteria { get; set; }
+
+        public string Date1 { get; set; }
     }
 }
     

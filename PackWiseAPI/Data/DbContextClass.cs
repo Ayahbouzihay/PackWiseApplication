@@ -9,6 +9,8 @@ namespace PackWiseAPI.Data
         { }
         //Ayah-mounina Bouzihay
         public DbSet<TripCategory> TripCategory { get; set; }
+
+        //Ayden Pratt
         public DbSet<PackingRecommendation> PackingRecommendation { get; set; }
     }
 }

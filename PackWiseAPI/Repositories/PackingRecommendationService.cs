@@ -2,8 +2,6 @@
 using PackWiseAPI.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
-using PackWiseAPI.Data;
-using PackWiseAPI.Entities;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -32,6 +30,22 @@ namespace PackWiseAPI.Repositories
         }
 
         public Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate)
+        {
+            throw new NotImplementedException();
+        }
+       
+        //Ayden Pratt InputTripDates
+        public async Task<List<PackingRecommendation>> InputTripDates(String Date1)
+        {
+            var DateParam = new SqlParameter("@Date", Date1);
+            var packingRecommendations = await _dbContext.PackingRecommendation
+                .FromSqlRaw("EXECUTE spInputTripDates @Date", DateParam)
+                .ToListAsync();
+
+            return packingRecommendations;
+        }
+
+        public Task<List<PackingRecommendation>> inputTripDates(DateTime Date)
         {
             throw new NotImplementedException();
         }
