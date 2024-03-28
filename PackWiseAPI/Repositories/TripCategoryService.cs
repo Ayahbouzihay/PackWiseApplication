@@ -23,7 +23,13 @@ namespace PackWiseAPI.Repositories
             var exploreActivities = await Task.Run(() => _dbContextClass.TripCategory.FromSqlRaw("exec spExploreActivities @CategoryID", param).ToListAsync());
             return exploreActivities;
         }
-        //
+        //Ayden Pratt
+        public async Task<List<TripCategory>> SelectTrip(String CategoryName)
+        {
+            var param = new SqlParameter("@CategoryName", CategoryName);
+            var selectTrip = await Task.Run(() => _dbContextClass.TripCategory.FromSqlRaw("exec SelectTrip @CategoryName", param).ToListAsync());
+            return selectTrip;
+        }
 
     }
 }
