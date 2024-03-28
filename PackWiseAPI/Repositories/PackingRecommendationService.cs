@@ -17,7 +17,7 @@ namespace PackWiseAPI.Repositories
         {
             _dbContext = dbContext;
         }
-        
+        //Ayah-mounina Bouzihay get Packing Recommendation
         public async Task<List<PackingRecommendation>> getPackingRecommendations(string travelerId, DateTime tripDate)
         {
             var travelerIdParam = new SqlParameter("@TravelerID", travelerId);

@@ -9,6 +9,7 @@ namespace PackWiseAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class PackingRecommendationController : ControllerBase
     {
         private readonly IPackingRecommendationService _packingRecommendationService;
@@ -19,6 +20,7 @@ namespace PackWiseAPI.Controllers
         }
 
         [HttpGet]
+        //Ayah-mounina Bouzihay
         public async Task<ActionResult<List<PackingRecommendation>>> GetPackingRecommendations(string travelerId, DateTime tripDate)
         {
             var packingRecommendations = await _packingRecommendationService.GetPackingRecommendations(travelerId, tripDate);

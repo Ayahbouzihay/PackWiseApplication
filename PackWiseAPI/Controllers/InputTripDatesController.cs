@@ -11,11 +11,11 @@ namespace PackWiseAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class InputTripDates : ControllerBase
+    public class InputTripDatesController : ControllerBase
     {
         private readonly IPackingRecommendationService packingRecommendationService2;
 
-        public InputTripDates(IPackingRecommendationService packingRecommendationService)
+        public InputTripDatesController(IPackingRecommendationService packingRecommendationService)
         {
             packingRecommendationService2 = packingRecommendationService;
         }
