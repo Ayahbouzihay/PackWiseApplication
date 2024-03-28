@@ -10,6 +10,6 @@ namespace PackWiseAPI.Repositories
     {
         Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate);
 
-        Task<List<PackingRecommendation>> InputTripDates(string Date1);
+        Task<List<PackingRecommendation>> InputTripDates(DateTime Date);
     }
 }

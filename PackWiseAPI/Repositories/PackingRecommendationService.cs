@@ -35,11 +35,11 @@ namespace PackWiseAPI.Repositories
         }
        
         //Ayden Pratt InputTripDates
-        public async Task<List<PackingRecommendation>> InputTripDates(String Date1)
+        public async Task<List<PackingRecommendation>> InputTripDates(DateTime Date)
         {
-            var DateParam = new SqlParameter("@Date", Date1);
+            var DateParam = new SqlParameter("@Date", Date);
             var packingRecommendations = await _dbContext.PackingRecommendation
-                .FromSqlRaw("EXECUTE spInputTripDates @Date", DateParam)
+                .FromSqlRaw("EXECUTE InputTripDates @Date", DateParam)
                 .ToListAsync();
 
             return packingRecommendations;
