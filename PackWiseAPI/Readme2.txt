@@ -39,7 +39,7 @@
 
 # Web API Documentation
 
-## Explore Activities
+## Explore Activities (Ayah-Mounina Bouzihay)
 
 ### Purpose:
 Retrieves a list of activities based on the selected trip category.
@@ -54,7 +54,7 @@ Retrieves a list of activities based on the selected trip category.
   - Location
   - Duration
 
-## Get Packing Recommendations
+## Get Packing Recommendations (Ayah-mounina Bouzihay)
 
 ### Purpose:
 Retrieves personalized packing recommendations for a specific traveler and trip date.
