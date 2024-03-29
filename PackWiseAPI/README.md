@@ -65,3 +65,26 @@ Retrieves personalized packing recommendations for a specific traveler and trip 
 
 ### Outputs:
 - List of packing recommendations
+
+## InputTripDates (Ayden Pratt)
+
+### Purpose:
+- Allows for a user to input the dates of the trip they are planning on taking. 
+
+### Inputs:
+- Date: Unique identifier for the user to input.
+
+### Outputs:
+- Returns a list of packing recommendations objects. 
+- Each packing recommendation object provides data on what to pack for the specific date. 
+
+## Select Trip (Ayden Pratt)
+
+### Purpose:
+- Allows a user to select the type of trip they will be taking. 
+
+### Inputs:
+-CategoryName: Unique identifier for the each kind of trip the user will be taking. 
+
+### Outputs:
+- List of types of trips you can take. 
