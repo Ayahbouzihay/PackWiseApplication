@@ -3,3 +3,7 @@
 
 // Write your JavaScript code.
 
+
+async function displayTrips(CategoryName){
+    const response = await fetch('/api/SelectTrip/{CategoryName}'
+}
