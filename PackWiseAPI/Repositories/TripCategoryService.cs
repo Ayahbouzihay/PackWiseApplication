@@ -31,9 +31,15 @@ namespace PackWiseAPI.Repositories
           return selectTrip;
         }
 
-        public Task<List<TripCategory>> SelectTrip(string CategoryName)
+        public async Task<List<TripCategory>> SelectTrip(string CategoryName)
         {
-            throw new NotImplementedException();
+            var categoryNameParam = new SqlParameter("@CategoryName", CategoryName);
+
+            var tripCategories = await _dbContextClass.TripCategory
+                .FromSqlRaw("EXECUTE selectTrip @CategoryName", categoryNameParam)
+                .ToListAsync();
+
+            return tripCategories;
         }
     }
 }
