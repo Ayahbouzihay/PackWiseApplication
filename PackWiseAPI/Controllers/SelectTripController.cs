@@ -17,9 +17,10 @@ namespace PackWiseAPI.Controllers
         [HttpGet("{CategoryName}")]
         public async Task<List<TripCategory>> selectTrip(string CategoryName)
         {
-            var SelectTrip = await tripCategoryService.selectTrip(CategoryName);
+            var SelectTrip = await tripCategoryService.SelectTrip(CategoryName);
             if (selectTrip == null)
            {
+
                 //return NotFound();
            }
 
@@ -31,4 +32,3 @@ namespace PackWiseAPI.Controllers
 
     }
 }
-

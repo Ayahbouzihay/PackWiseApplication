@@ -59,7 +59,6 @@ namespace PackWiseAPI.Repositories
         {
             var dateParam = new SqlParameter("@Date", Date);
 
-            // Execute the stored procedure and retrieve PackingRecommendation records
             var packingRecommendations = await _dbContext.PackingRecommendation
                 .FromSqlRaw("EXECUTE InputTripDates @Date", dateParam)
                 .ToListAsync();
