@@ -7,6 +7,6 @@ namespace PackWiseAPI.Repositories
     {
         public Task<List<TripCategory>> ExploreActivities(int CategoryID);
 
-        public Task<List<TripCategory>> SelectTrip(String CategoryName);
+        public Task<List<TripCategory>> selectTrip(string CategoryName);
     }
 }

@@ -24,10 +24,10 @@ namespace PackWiseAPI.Repositories
             return exploreActivities;
         }
         //Ayden Pratt
-        public async Task<List<TripCategory>> SelectTrip(String CategoryName)
+        public async Task<List<TripCategory>> selectTrip(string CategoryName)
         {
             var param = new SqlParameter("@CategoryName", CategoryName);
-            var selectTrip = await Task.Run(() => _dbContextClass.TripCategory.FromSqlRaw("exec SelectTrip @CategoryName", param).ToListAsync());
+            var selectTrip = await Task.Run(() => _dbContextClass.TripCategory.FromSqlRaw("exec selectTrip @CategoryName", param).ToListAsync());
             return selectTrip;
         }
 

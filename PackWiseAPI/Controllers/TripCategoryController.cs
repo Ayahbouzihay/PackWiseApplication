@@ -19,7 +19,7 @@ namespace PackWiseAPI.Controllers
         {
             var exploreActivities = await tripCategoryService.ExploreActivities(CategoryID);
             if (exploreActivities == null)
-            {
+           { 
                 //return NotFound();
             }
 

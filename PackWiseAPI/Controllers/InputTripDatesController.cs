@@ -19,7 +19,7 @@ namespace PackWiseAPI.Controllers
         {
             packingRecommendationService2 = packingRecommendationService;
         }
-        [HttpPost]
+        [HttpGet]
         public async Task<ActionResult<List<PackingRecommendation>>> inputTripDates(DateTime Date)
         {
             var DateDetails = await packingRecommendationService2.InputTripDates(Date);

@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ITripCategoryService, TripCategoryService >();
 builder.Services.AddScoped<IPackingRecommendationService, PackingRecommendationService >();
 builder.Services.AddDbContext<DbContextClass>(options =>
-  {  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnections"));
+  {  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

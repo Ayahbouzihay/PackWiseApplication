@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace PackWiseAPI.Repositories
@@ -54,9 +55,16 @@ namespace PackWiseAPI.Repositories
             return packingRecommendations;
         }
 
-        public Task<List<PackingRecommendation>> inputTripDates(DateTime Date)
+        public async Task<List<PackingRecommendation>> inputTripDates(DateTime Date)
         {
-            throw new NotImplementedException();
+            var dateParam = new SqlParameter("@Date", Date);
+
+            // Execute the stored procedure and retrieve PackingRecommendation records
+            var packingRecommendations = await _dbContext.PackingRecommendation
+                .FromSqlRaw("EXECUTE InputTripDates @Date", dateParam)
+                .ToListAsync();
+
+            return packingRecommendations;
         }
     }
 }
