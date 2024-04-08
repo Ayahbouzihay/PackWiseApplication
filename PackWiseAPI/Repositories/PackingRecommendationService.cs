@@ -29,9 +29,18 @@ namespace PackWiseAPI.Repositories
             return packingRecommendations;
         }
 
-        public Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate)
+        public async Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate)
         {
-            throw new NotImplementedException();
+         
+            
+               var travelerIdParam = new SqlParameter("@TravelerID", travelerId);
+                var tripDateParam = new SqlParameter("@TripDate", tripDate);
+                var packingRecommendations = await _dbContext.PackingRecommendation
+                    .FromSqlRaw("EXECUTE spViewPackingRecommendations @TravelerID, @TripDate", travelerIdParam, tripDateParam)
+                    .ToListAsync();
+
+                return packingRecommendations;
+            
         }
        
         //Ayden Pratt InputTripDates
