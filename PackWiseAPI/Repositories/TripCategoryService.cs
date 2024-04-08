@@ -31,8 +31,9 @@ namespace PackWiseAPI.Repositories
           return selectTrip;
         }
 
-
-
-
+        public Task<List<TripCategory>> SelectTrip(string CategoryName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

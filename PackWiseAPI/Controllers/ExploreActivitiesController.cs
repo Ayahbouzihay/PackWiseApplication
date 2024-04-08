@@ -7,10 +7,10 @@ namespace PackWiseAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TripCategoryController : Controller
+    public class ExploreActivitiesController : Controller
     {
         private readonly ITripCategoryService tripCategoryService;
-        public TripCategoryController(ITripCategoryService tripCategoryService)
+        public ExploreActivitiesController(ITripCategoryService tripCategoryService)
         {
             this.tripCategoryService = tripCategoryService;
         }
