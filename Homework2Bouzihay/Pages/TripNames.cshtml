@@ -1,0 +1,11 @@
+﻿@page
+@model Homework2Bouzihay.Pages.TripNamesModel
+@{
+    var categoryName = HttpContext.Request.Query["categoryName"];
+}
+<h2 id="TripName" style="visibility: hidden;"><span></span></h2>
+
+
+<script type="module">
+      displayTripCat("@categoryName");
+</script>
