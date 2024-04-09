@@ -1,0 +1,20 @@
+﻿@page
+@model Homework2Bouzihay.Pages.DateSearchModel
+@{
+    var date = HttpContext.Request.Query["date"];
+    var temperatureC = HttpContext.Request.Query["temperatureC"];
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+</head>
+<h2 id="date" style="visibility: hidden;"><span></span></h2>
+<div id="temperatureC" style="visibility: hidden;"></div>
+<div id="temperatureF" style="visibility: hidden;"></div>
+<div id="summary" style="visibility: hidden;"></div>
+
+<script type="module">
+   
+    DateResults("@date");
+    DateWeatherResults("@temperatureC");
+  
+    </script>

@@ -3,9 +3,17 @@
 @{
     var categoryName = HttpContext.Request.Query["categoryName"];
 }
+
 <h2 id="TripName" style="visibility: hidden;"><span></span></h2>
+
+<form method="get" action="/DateSearch">
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" name="date">
+    <button type="submit">Search</button>
+</form>
 
 
 <script type="module">
       displayTripCat("@categoryName");
+
 </script>
