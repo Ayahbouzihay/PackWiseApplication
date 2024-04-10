@@ -29,7 +29,18 @@ builder.Services.AddCors(options =>
 
         );
 });
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowMyRazorPagesApp",
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:7004")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        }
 
+        );
+});
 
 var app = builder.Build();
 
@@ -41,6 +52,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowMyRazorPagesApp");
 
 app.UseAuthorization();
 

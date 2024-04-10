@@ -1,6 +1,7 @@
 ﻿@page
 @model Homework2Bouzihay.Pages.SelectTripDatesModel
 @{
+    
 }
 <head>
     <link rel="stylesheet" type="text/css" href="css/site.css">
@@ -8,9 +9,13 @@
 <body>
     <h1>Select Trip Category</h1>
 
-    <form id="selectTripForm">
-        <label for="category">Select Category:</label>
-        <select id="category" name="category">
+    <form id="selectTripForm" action="/TripNames" method="get">
+        <label for="categoryName">Select Category:</label>
+        <select id="categoryName" name="categoryName">
+            <option value="Hiking">Hiking</option>
+            <option value="Beach">Beach</option>
+            <option value="Skiing">Skiing</option>
+            <option value="Camping">Camping</option>
         </select>
         <button type="submit">Submit</button>
     </form>
@@ -18,5 +23,5 @@
     <div id="selectedCategory"></div>
 
 </body>
-</html>
+
 
