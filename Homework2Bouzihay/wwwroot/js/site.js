@@ -29,3 +29,68 @@ async function DateWeatherResults(temperatureC) {
     document.getElementById('summary').innerHTML = data[0].summary;
     document.getElementById('summary').style.visibility = "visible";
 }
+/ Add an event listener to the form submission event
+document.getElementById('dateForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Get the selected date from the input field
+    const selectedDate = document.getElementById('date').value;
+    console.log('Selected Date:', selectedDate);
+
+    // Call the function to fetch packing recommendations based on the selected date
+    await fetchPackingRecommendations(selectedDate);
+});
+
+// Function to fetch packing recommendations based on the selected date
+async function fetchPackingRecommendations(selectedDate) {
+    try {
+        const response = await fetch(`https://localhost:7270/api/InputTripDates/${selectedDate}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch packing recommendations');
+        }
+        const data = await response.json();
+        console.log('Packing Recommendations:', data);
+        // You can update the UI to display the packing recommendations here
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
+// Add an event listener to the form submission event
+document.getElementById('dateForm').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Get the selected date from the input field
+    const selectedDate = document.getElementById('date').value;
+    console.log('Selected Date:', selectedDate);
+
+    // Call the function to fetch packing recommendations based on the selected date
+    await fetchPackingRecommendations(selectedDate);
+});
+
+// Function to fetch packing recommendations based on the selected date
+async function fetchPackingRecommendations(selectedDate) {
+    try {
+        const response = await fetch(`https://localhost:7270/api/InputTripDates/${selectedDate}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch packing recommendations');
+        }
+        const data = await response.json();
+        console.log('Packing Recommendations:', data);
+        // You can update the UI to display the packing recommendations here
+        displayPackingRecommendations(data); // Assuming you have a function to display packing recommendations
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
+
+// Function to display packing recommendations
+function displayPackingRecommendations(packingRecommendations) {
+    // Update the UI to display the packing recommendations
+    const packingListDiv = document.getElementById('packingRecommendations');
+    packingListDiv.innerHTML = ''; // Clear previous content
+    packingRecommendations.forEach(recommendation => {
+        const listItem = document.createElement('div');
+        listItem.textContent = recommendation.itemName; // Example property name, adjust as needed
+        packingListDiv.appendChild(listItem);
+    });
+}
