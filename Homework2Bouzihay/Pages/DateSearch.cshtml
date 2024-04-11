@@ -2,19 +2,29 @@
 @model Homework2Bouzihay.Pages.DateSearchModel
 @{
     var date = HttpContext.Request.Query["date"];
-    var temperatureC = HttpContext.Request.Query["temperatureC"];
+ 
 }
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
     <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
-<h2 id="date" style="visibility: hidden;"><span></span></h2>
-<div id="temperatureC" style="visibility: hidden;"></div>
-<div id="temperatureF" style="visibility: hidden;"></div>
-<div id="summary" style="visibility: hidden;"></div>
+<html>
+<body>
+    <h2>The Date you have selected for this trip is </h2>
+<div class="weather-chart">
+    <div class="weather-item">
+        <h3 class="weather-title">Date</h3>
+        <div id="dateElement" class="weather-data" style="visibility: hidden;"><span></span></div>
+    </div>
+</div>
+</body>
+</html>
 
-<script type="module">
-   
-    DateResults("@date");
-    DateWeatherResults("@temperatureC");
-  
+
+    <script type="module">
+
+    DateResults("@date")
+
     </script>

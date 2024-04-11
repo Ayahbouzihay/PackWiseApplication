@@ -7,11 +7,35 @@
     <link rel="stylesheet" type="text/css" href="css/site.css">
 </head>
 <body>
-    <h1>Select Trip Category</h1>
+    <h1 class="bigger-title centered-title">What we Offer</h1>
 
-    <form id="selectTripForm" action="/TripNames" method="get">
+    <div class="offer-category">
+        <h2>Hiking</h2>
+        <p>Explore the great outdoors with our hiking trips.<br>Find amazing views with a variety of trails</p>
+        <img src="Hiking.jpg" alt="Hiking" class="offer-picture">
+    </div>
+
+    <div class="offer-category">
+        <h2>Beach</h2>
+        <p>Nothing beats the sensation of relaxing when your at the beach.<br>You get to enjoy many different activities that involve the sand and ocean.</p>
+        <img src="Beach.jpg" alt="Beach" class="offer-picture">
+    </div>
+
+    <div class="offer-category">
+        <h2>Skiing</h2>
+        <p>Reach an adrenaline rush going down different slopes.<br>Once you finish up you can find your self in a resort full of many activities.</p>
+        <img src="Skiing.jpg" alt="Skiing" class="offer-picture">
+    </div>
+
+    <div class="offer-category">
+        <h2>Camping</h2>
+        <p>Embark on an unforgettable adventure as you connect with nature and create lasting memories under the starlit sky during our camping expeditions.</p>
+        <img src="Camping.jpg" alt="Camping" class="offer-picture"> 
+    </div>
+    
+        <form id="selectTripForm" action="/TripNames" method="get">
         <label for="categoryName">Select Category:</label>
-        <select id="categoryName" name="categoryName">
+        <select id="categoryName" name="categoryName" class="bigger-select">
             <option value="Hiking">Hiking</option>
             <option value="Beach">Beach</option>
             <option value="Skiing">Skiing</option>
