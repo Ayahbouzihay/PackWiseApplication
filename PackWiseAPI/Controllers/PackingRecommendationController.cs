@@ -21,12 +21,12 @@ namespace PackWiseAPI.Controllers
 
         [HttpGet]
         //Ayah-mounina Bouzihay
-        public async Task<ActionResult<List<PackingRecommendation>>> GetPackingRecommendations(string travelerId, DateTime Date)
+        public async Task<ActionResult<List<PackingRecommendation>>> GetPackingRecommendations(int travelerId, DateTime Date)
         {
             var packingRecommendations = await _packingRecommendationService.GetPackingRecommendations(travelerId, Date);
-            if (packingRecommendations == null || packingRecommendations.Count == 0)
+            if (packingRecommendations == null)
             {
-                return NotFound();
+                //return NotFound();
             }
             return packingRecommendations;
         }

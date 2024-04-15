@@ -18,36 +18,45 @@ async function DateResults(date) {
 }
 
 async function fetchRecommendations(travelerID, date) {
-    const response = await fetch(`https://localhost:7270/api/PackingRecommendation?travelerID=${travelerID}&Date=${date}`);
-    if (!response.ok) {
-        //throw new Error('Failed to fetch recommendations');
+    const response = await fetch(`https://localhost:7270/api/PackingRecommendation/travelerid=${travelerID}&date=${date}`);
+    const data = await response.json();
+
+    document.getElementById('recommendationID').innerHTML = data[0].recommendationID;
+    document.getElementById('travelerID').innerHTML = data[0].travelerID;
+    document.getElementById('date').innerHTML = data[0].date;
+    document.getElementById('tripCategoryID').innerHTML = data[0].tripCategoryID;
+    document.getElementById('criteriaID').innerHTML = data[0].criteriaID;
+    document.getElementById('recommendations').innerHTML = data[0].recommendations;
+   
+        //const recommendations = await response.json();
+        //const recommendationsDiv = document.getElementById('recommendations');
+        //recommendationsDiv.innerHTML = ''; // Clear previous recommendations
+
+        ////if (recommendations.length === 0) {
+        ////    recommendationsDiv.textContent = 'No recommendations available';
+        ////    return;
+        ////}
+
+        //const table = document.createElement('table');
+        //table.border = '1';
+
+        //// Create table header row
+        //const headerRow = document.createElement('tr');
+        //for (const key in recommendations[0]) {
+        //    const th = document.createElement('th');
+        //    th.textContent = key;
+        //    headerRow.appendChild(th);
+        //}
+        //table.appendChild(headerRow);
+
+        //// Create table rows for each recommendation
+        //recommendations.forEach(recommendation => {
+        //    const row = document.createElement('tr');
+        //    for (const key in recommendation) {
+        //        const td = document.createElement('td');
+        //        td.textContent = recommendation[key];
+        //        row.appendChild(td);
+        //    }
+        //    table.appendChild(row);
+        //});
     }
-    return await response.json();
-}
-
-async function renderRecommendations(travelerID, date) {
-    try {
-        const recommendations = await fetchRecommendations(travelerId, date);
-        const recommendationsDiv = document.getElementById('recommendations');
-        recommendationsDiv.innerHTML = ''; // Clear previous recommendations
-
-        if (recommendations.length === 0) {
-            recommendationsDiv.textContent = 'No recommendations available';
-            return;
-        }
-
-        const recommendationList = document.createElement('ul');
-        recommendations.forEach(recommendation => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `Recommendation ID: ${recommendations.recommendationID}, Recommendations: ${recommendations.recommendations}`;
-            recommendationList.appendChild(listItem);
-        });
-
-        recommendationsDiv.appendChild(recommendationList);
-    } catch (error) {
-        //console.error('Error fetching or rendering recommendations:', error);
-    }
-}
-
-
-    

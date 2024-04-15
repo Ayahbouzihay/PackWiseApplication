@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Numerics;
 
 
 namespace PackWiseAPI.Repositories
@@ -19,7 +20,7 @@ namespace PackWiseAPI.Repositories
             _dbContext = dbContext;
         }
         //Ayah-mounina Bouzihay get Packing Recommendation
-        public async Task<List<PackingRecommendation>> getPackingRecommendations(string travelerId, DateTime Date)
+        public async Task<List<PackingRecommendation>> getPackingRecommendations(int travelerId, DateTime Date)
         {
             var travelerIdParam = new SqlParameter("@TravelerID", travelerId);
             var DateParam = new SqlParameter("@Date", Date);
@@ -30,15 +31,8 @@ namespace PackWiseAPI.Repositories
             return packingRecommendations;
         }
 
-        public async Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime Date)
+        public async Task<List<PackingRecommendation>> GetPackingRecommendations(int travelerId, DateTime Date)
         {
-          
-                if (string.IsNullOrEmpty(travelerId))
-                {
-                    // Use a default traveler ID if none is provided
-                    travelerId = "default";
-                }
-
                 var travelerIdParam = new SqlParameter("@TravelerID", travelerId);
                 var DateParam = new SqlParameter("@Date", Date);
                 var packingRecommendations = await _dbContext.PackingRecommendation
