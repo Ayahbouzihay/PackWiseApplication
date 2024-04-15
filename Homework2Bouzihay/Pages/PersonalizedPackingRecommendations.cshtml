@@ -1,23 +1,29 @@
-﻿
-@page 
+﻿@page
 @model Homework2Bouzihay.Pages.PersonalizedPackingRecommendationsModel
-@{
-    var travelerId = HttpContext.Request.Query["travelerId"];
-    var tripDate = HttpContext.Request.Query["tripDate"];
-}
 
-<h2 id="PersonalizedPackingRecommendations" style="visibility: hidden;"><span></span></h2>
-<form id="dateForm" action="/DateSearch">
-    <!-- Specify the action attribute -->
-    <label for="date">Select Date:</label>
-    <input type="date" id="date" name="date">
-    <button type="submit">Search</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packing Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Packing Recommendations</h1>
 
-<div id="packingRecommendations">
-    <!-- Packing recommendations will be displayed here -->
-</div>
+    <form id="recommendationForm">
+        <label for="travelerId">Enter Traveler ID:</label>
+        <input type="text" id="travelerId" name="travelerId">
 
-<script type="module">
-    getPackingRecommendations('@travelerId', '@tripDate');
-</script>
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date">
+
+        <button type="button" onclick="fetchRecommendations()">Get Recommendations</button>
+    </form>
+
+    <div id="recommendations"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
