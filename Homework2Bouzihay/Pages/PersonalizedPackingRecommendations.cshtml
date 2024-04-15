@@ -1,5 +1,9 @@
 ﻿@page
 @model Homework2Bouzihay.Pages.PersonalizedPackingRecommendationsModel
+@{
+    var date = HttpContext.Request.Query["date"];
+    var travelerID = HttpContext.Request.Query["travelerID"];
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +28,11 @@
 
     <div id="recommendations"></div>
 
-    <script src="script.js"></script>
+   
 </body>
 </html>
+<script type="module">
+
+    renderRecommendations("@travelerID", "@date")
+
+</script>
