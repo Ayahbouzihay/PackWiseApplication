@@ -22,7 +22,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowMyRazorPagesApp",
         builder =>
         {
-            builder.WithOrigins("https://localhost:7270")
+            builder.WithOrigins("https://localhost:7004")
             .AllowAnyHeader()
             .AllowAnyMethod();
         }
@@ -34,7 +34,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowMyRazorPagesApp",
         builder =>
         {
-            builder.WithOrigins("https://localhost:7270")
+            builder.WithOrigins("https://localhost:7004")
             .AllowAnyHeader()
             .AllowAnyMethod();
         }
