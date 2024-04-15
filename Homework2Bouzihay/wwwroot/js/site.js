@@ -18,14 +18,14 @@ async function DateResults(date) {
 }
 
 async function fetchRecommendations(categoryId, date) {
-    const response = await fetch(`https://localhost:7270/api/PackingRecommendations?travelerId=${travelerId}&date=${date}`);
+    const response = await fetch(`https://localhost:7270/api/PackingRecommendation?travelerID={travelerId}&date=${date}`);
     if (!response.ok) {
         throw new Error('Failed to fetch recommendations');
     }
     return await response.json();
 }
 
-async function renderRecommendations(travelerId, date) {
+async function renderRecommendations(travelerID, date) {
     try {
         const recommendations = await fetchRecommendations(travelerId, date);
         const recommendationsDiv = document.getElementById('recommendations');
