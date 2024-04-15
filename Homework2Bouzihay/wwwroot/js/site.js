@@ -17,10 +17,10 @@ async function DateResults(date) {
     document.getElementById('dateElement').style.visibility = "visible";
 }
 
-async function fetchRecommendations(categoryId, date) {
-    const response = await fetch(`https://localhost:7270/api/PackingRecommendation?travelerID={travelerId}&date=${date}`);
+async function fetchRecommendations(travelerID, date) {
+    const response = await fetch(`https://localhost:7270/api/PackingRecommendation?travelerID=${travelerID}&Date=${date}`);
     if (!response.ok) {
-        throw new Error('Failed to fetch recommendations');
+        //throw new Error('Failed to fetch recommendations');
     }
     return await response.json();
 }
@@ -45,7 +45,7 @@ async function renderRecommendations(travelerID, date) {
 
         recommendationsDiv.appendChild(recommendationList);
     } catch (error) {
-        console.error('Error fetching or rendering recommendations:', error);
+        //console.error('Error fetching or rendering recommendations:', error);
     }
 }
 

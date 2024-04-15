@@ -16,14 +16,14 @@ namespace PackWiseAPI.Controllers
 
         public PackingRecommendationController(IPackingRecommendationService packingRecommendationService)
         {
-            _packingRecommendationService = packingRecommendationService;
+            this._packingRecommendationService = packingRecommendationService;
         }
 
         [HttpGet]
         //Ayah-mounina Bouzihay
-        public async Task<ActionResult<List<PackingRecommendation>>> GetPackingRecommendations(string travelerId, DateTime tripDate)
+        public async Task<ActionResult<List<PackingRecommendation>>> GetPackingRecommendations(string travelerId, DateTime Date)
         {
-            var packingRecommendations = await _packingRecommendationService.GetPackingRecommendations(travelerId, tripDate);
+            var packingRecommendations = await _packingRecommendationService.GetPackingRecommendations(travelerId, Date);
             if (packingRecommendations == null || packingRecommendations.Count == 0)
             {
                 return NotFound();

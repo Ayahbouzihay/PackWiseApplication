@@ -1,7 +1,7 @@
 ﻿@page
 @model Homework2Bouzihay.Pages.PersonalizedPackingRecommendationsModel
 @{
-    var date = HttpContext.Request.Query["date"];
+    var Date = HttpContext.Request.Query["date"];
     var travelerID = HttpContext.Request.Query["travelerID"];
 }
 
@@ -17,8 +17,8 @@
     <h1>Packing Recommendations</h1>
 
     <form id="recommendationForm">
-        <label for="travelerId">Enter Traveler ID:</label>
-        <input type="text" id="travelerId" name="travelerId">
+        <label for="travelerID">Enter Traveler ID:</label>
+        <input type="text" id="travelerID" name="travelerID">
 
         <label for="date">Select Date:</label>
         <input type="date" id="date" name="date">
@@ -33,6 +33,6 @@
 </html>
 <script type="module">
 
-    renderRecommendations("@travelerID", "@date")
+    renderRecommendations("@travelerID", "@Date")
 
 </script>

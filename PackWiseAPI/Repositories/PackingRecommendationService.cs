@@ -19,18 +19,18 @@ namespace PackWiseAPI.Repositories
             _dbContext = dbContext;
         }
         //Ayah-mounina Bouzihay get Packing Recommendation
-        public async Task<List<PackingRecommendation>> getPackingRecommendations(string travelerId, DateTime tripDate)
+        public async Task<List<PackingRecommendation>> getPackingRecommendations(string travelerId, DateTime Date)
         {
             var travelerIdParam = new SqlParameter("@TravelerID", travelerId);
-            var tripDateParam = new SqlParameter("@TripDate", tripDate);
+            var DateParam = new SqlParameter("@Date", Date);
             var packingRecommendations = await _dbContext.PackingRecommendation
-                .FromSqlRaw("EXECUTE spViewPackingRecommendations @TravelerID, @TripDate", travelerIdParam, tripDateParam)
+                .FromSqlRaw("EXECUTE spViewPackingRecommendations @TravelerID, @Date", travelerIdParam, DateParam)
                 .ToListAsync();
         
             return packingRecommendations;
         }
 
-        public async Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate)
+        public async Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime Date)
         {
           
                 if (string.IsNullOrEmpty(travelerId))
@@ -40,9 +40,9 @@ namespace PackWiseAPI.Repositories
                 }
 
                 var travelerIdParam = new SqlParameter("@TravelerID", travelerId);
-                var tripDateParam = new SqlParameter("@TripDate", tripDate);
+                var DateParam = new SqlParameter("@Date", Date);
                 var packingRecommendations = await _dbContext.PackingRecommendation
-                    .FromSqlRaw("EXECUTE spViewPackingRecommendations @TravelerID, @TripDate", travelerIdParam, tripDateParam)
+                    .FromSqlRaw("EXECUTE spViewPackingRecommendations @TravelerID, @Date", travelerIdParam, DateParam)
                     .ToListAsync();
 
                 return packingRecommendations;

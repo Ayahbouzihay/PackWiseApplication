@@ -9,7 +9,7 @@ namespace PackWiseAPI.Repositories
 {
     public interface IPackingRecommendationService
     {
-        Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime tripDate);
+        Task<List<PackingRecommendation>> GetPackingRecommendations(string travelerId, DateTime Date);
 
         Task<List<PackingRecommendation>> InputTripDates(DateTime Date);
        
