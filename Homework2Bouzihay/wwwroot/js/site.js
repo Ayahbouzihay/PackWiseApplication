@@ -18,45 +18,38 @@ async function DateResults(date) {
 }
 
 
-    async function fetchRecommendations(travelerID, date) {
-        const response = await fetch(`https://localhost:7270/api/PackingRecommendation?travelerid=${travelerID}&date=${date}`);
-            const data = await response.json();
-
-            //document.getElementById('recommendationID').innerText = data[0].recommendationID;
-            document.getElementById('travelerID').innerText = data[0].travelerID;
-            document.getElementById('date').innerText = data[0].date;
-            //document.getElementById('tripCategoryID').innerText = data[0].tripCategoryID;
-            //document.getElementById('criteriaID').innerText = data[0].criteriaID;
-            document.getElementById('recommendations').innerText = data[0].recommendations;
-        }
-
-        // Example function to trigger fetchRecommendations
-        async function getRecommendations() {
-            const travelerID = document.getElementById('travelerIDInput').value;
-            const date = document.getElementById('dateInput').value;
-            await fetchRecommendations(travelerID, date);
-        }
-    
-
-
-async function displayActivitieslist() {
-    const categoryId = document.getElementById('categorySelect').value;
-    console.log('Selected Category ID:', categoryId); // Log the selected category ID
-
-    const response = await fetch(`https://localhost:7270/api/ExploreActivities/${categoryId}`);
+async function fetchRecommendations(travelerID, date) {
+    const response = await fetch(`https://localhost:7270/api/PackingRecommendation?travelerid=${travelerID}&date=${date}`);
     const data = await response.json();
-    console.log('Received Data:', data); // Log the received data
 
-    const activityListDiv = document.getElementById('activityList');
-    activityListDiv.innerHTML = ''; // Clear previous activities
+    document.getElementById('travelerID').innerText = data[0].travelerID;
+    document.getElementById('date').innerText = data[0].date;
+    document.getElementById('recommendations').innerText = data[0].recommendations;
+}
 
+async function getRecommendations() {
+    const travelerID = document.getElementById('travelerIDInput').value;
+    const date = document.getElementById('dateInput').value;
+    await fetchRecommendations(travelerID, date);
+}
+
+
+async function DisplayActivities(categoryID) {
+    const response = await fetch(`https://localhost:7270/api/ExploreActivities/${categoryID}`);
+    const data = await response.json();
+    const activityList = document.getElementById('activityList');
+    activityList.innerHTML = ''; 
     data.forEach(activity => {
-        const activityNameDiv = document.createElement('div');
-        activityNameDiv.textContent = activity.ActivityName;
-        activityListDiv.appendChild(activityNameDiv);
+        const activityElement = document.createElement('div');
+        activityElement.textContent = activity.activityName;
+        activityList.appendChild(activityElement);
     });
 }
 
+function displayActivitieslist() {
+    const categoryID = document.getElementById('categorySelect').value;
+    DisplayActivities(categoryID);
+}
 
 
 

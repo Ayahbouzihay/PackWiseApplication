@@ -13,12 +13,6 @@
 <html>
 <body>
     <h2>The Date you have selected for this trip is </h2>
-    <div class="weather-chart">
-        <div class="weather-item">
-            <h3 class="weather-title">Date</h3>
-            <div id="dateElement" class="weather-data" style="visibility: hidden;"><span></span></div>
-        </div>
-    </div>
 
     <div>
         <h2>Get Packing Recommendations</h2>
@@ -32,18 +26,29 @@
     </div>
     <div>
         <h3>Recommendation Details</h3>
+        <div class="weather-chart">
+            <div class="weather-item">
+                <h3 class="weather-title">TravelerID:</h3>
+                <div id="travelerID" class="weather-data"><span></span></div>
+            </div>
+        </div>
+        <div class="weather-chart">
+            <div class="weather-item">
+                <h3 class="weather-title">Date:</h3>
+                <div id="date" class="weather-data"><span></span></div> <!-- Corrected ID -->
+            </div>
+        </div>
+        <div class="weather-chart">
+            <div class="weather-item">
+                <h3 class="weather-title">Recommendations:</h3>
+                <div id="recommendations" class="weather-data"><span></span></div>
+            </div>
+        </div>
 
-        <div>Traveler ID: <span id="travelerID"></span></div>
-        <div>Date: <span id="date"></span></div>
-
-        <div>Recommendations: <span id="recommendations"></span></div>
     </div>
-
     <script type="module">
         DateResults("@date");
         fetchRecommendations("@travelerID", "@date");
-
-        
         document.getElementById('dateInput').value = "@date";
     </script>
 </body>

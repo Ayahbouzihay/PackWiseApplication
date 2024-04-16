@@ -1,6 +1,7 @@
 ﻿@page
 @model Homework2Bouzihay.Pages.ExploreActivitiesModel
 @{
+    var categoryID = HttpContext.Request.Query["categoryID"];
 }
 <html lang="en">
 <head>
@@ -17,11 +18,10 @@
     </select>
     <button type="button" onclick="displayActivitieslist()">Submit</button>
 
-    <div id="activityList">
-        <!-- Activities will be displayed here -->
-    </div>
+    <div id="activityList"></div>
 
-    <!-- Include the JavaScript file -->
-    <script src="js\site.js"></script>
+    <script type="module">
+        DisplayActvities("@categoryID")
+    </script>
 </body>
 </html>
