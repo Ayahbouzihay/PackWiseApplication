@@ -2,6 +2,7 @@
 @model Homework2Bouzihay.Pages.DateSearchModel
 @{
     var date = HttpContext.Request.Query["date"];
+    var travelerID = HttpContext.Request.Query["travelerID"];
 }
 <head>
     <meta charset="UTF-8">
@@ -12,18 +13,37 @@
 <html>
 <body>
     <h2>The Date you have selected for this trip is </h2>
-<div class="weather-chart">
-    <div class="weather-item">
-        <h3 class="weather-title">Date</h3>
-        <div id="dateElement" class="weather-data" style="visibility: hidden;"><span></span></div>
+    <div class="weather-chart">
+        <div class="weather-item">
+            <h3 class="weather-title">Date</h3>
+            <div id="dateElement" class="weather-data" style="visibility: hidden;"><span></span></div>
+        </div>
     </div>
-</div>
-</body>
-</html>
 
+    <div>
+        <h2>Get Packing Recommendations</h2>
+        <label for="travelerIDInput">Traveler ID:</label>
+        <input type="text" id="travelerIDInput" />
+        <br />
+        <label for="dateInput">Date:</label>
+        <input type="text" id="dateInput" />
+        <br />
+        <button onclick="getRecommendations()">Get Recommendations</button>
+    </div>
+    <div>
+        <h3>Recommendation Details</h3>
+
+        <div>Traveler ID: <span id="travelerID"></span></div>
+        <div>Date: <span id="date"></span></div>
+
+        <div>Recommendations: <span id="recommendations"></span></div>
+    </div>
 
     <script type="module">
+        DateResults("@date");
+        fetchRecommendations("@travelerID", "@date");
 
-    DateResults("@date")
-
+        
+        document.getElementById('dateInput').value = "@date";
     </script>
+</body>
