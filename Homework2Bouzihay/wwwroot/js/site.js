@@ -17,19 +17,26 @@ async function DateResults(date) {
     document.getElementById('dateElement').style.visibility = "visible";
 }
 
-async function fetchRecommendations(travelerID, date) {
-    const response = await fetch(`https://localhost:7270/api/PackingRecommendation/travelerid=${travelerID}&date=${date}`);
-    const data = await response.json();
 
-    document.getElementById('recommendationID').innerHTML = data[0].recommendationID;
-    document.getElementById('travelerID').innerHTML = data[0].travelerID;
-    document.getElementById('date').innerHTML = data[0].date;
-    document.getElementById('tripCategoryID').innerHTML = data[0].tripCategoryID;
-    document.getElementById('criteriaID').innerHTML = data[0].criteriaID;
-    document.getElementById('recommendations').innerHTML = data[0].recommendations;
-   
-        
-    }
+    async function fetchRecommendations(travelerID, date) {
+        const response = await fetch(`https://localhost:7270/api/PackingRecommendation?travelerid=${travelerID}&date=${date}`);
+            const data = await response.json();
+
+            //document.getElementById('recommendationID').innerText = data[0].recommendationID;
+            document.getElementById('travelerID').innerText = data[0].travelerID;
+            document.getElementById('date').innerText = data[0].date;
+            //document.getElementById('tripCategoryID').innerText = data[0].tripCategoryID;
+            //document.getElementById('criteriaID').innerText = data[0].criteriaID;
+            document.getElementById('recommendations').innerText = data[0].recommendations;
+        }
+
+        // Example function to trigger fetchRecommendations
+        async function getRecommendations() {
+            const travelerID = document.getElementById('travelerIDInput').value;
+            const date = document.getElementById('dateInput').value;
+            await fetchRecommendations(travelerID, date);
+        }
+    
 
 
 async function displayActivitieslist() {
