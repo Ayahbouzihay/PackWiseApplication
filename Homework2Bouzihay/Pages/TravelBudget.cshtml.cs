@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Homework2Bouzihay.Pages
 {
-    public class PersonalizedPackingRecommendationsModel : PageModel
+    public class TravelBudgetModel : PageModel
     {
         public void OnGet()
         {
