@@ -6,8 +6,8 @@
 async function displayTripCat(categoryName) {
     const response = await fetch(`https://localhost:7270/api/SelectTrip/${categoryName}`);
     const data = await response.json();
-    document.getElementById('TripName').innerHTML = data[0].categoryName;
-    document.getElementById('TripName').style.visibility = "visible";
+    document.getElementById('chosenTrip').innerHTML = data[0].categoryName;
+    document.getElementById('chosenTrip').style.visibility = "visible";
 }
 
 async function DateResults(date) {

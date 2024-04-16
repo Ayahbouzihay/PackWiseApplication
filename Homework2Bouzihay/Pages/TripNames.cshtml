@@ -4,16 +4,28 @@
     var categoryName = HttpContext.Request.Query["categoryName"];
 }
 
-<h2 id="TripName" style="visibility: hidden;"><span></span></h2>
+<h2 class="bigger-title centered-title" id="TripName" style="margin-bottom: 50px;">You have chosen to go <span id="chosenTrip"></span></h2>
 
-<form method="get" action="/DateSearch">
-    <label for="date">Select Date:</label>
-    <input type="date" id="date" name="date">
-    <button type="submit">Search</button>
-</form>
+<div style=" text-align: center; margin-bottom: 50px; font-size: 20px;">
+    <p>Please choose the location you would like to your <span id="chosenTrip"></span> trip</p>
+    <form method="get" action="/LocationSearch" style="display: inline-block;">
+        <label for="location">Select Location:</label>
+        <input type="text" id="location" name="location">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+</div>
 
+<div style="text-align: center; font-size: 20px;">
+    <p>Please select the date when you would like to attend your <span id="chosenTrip"></span> trip</p>
+    <form method="get" action="/DateSearch" style="display: inline-block;">
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+</div>
 
 <script type="module">
       displayTripCat("@categoryName");
 
 </script>
+
