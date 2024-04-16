@@ -5,7 +5,7 @@ namespace PackWiseAPI.Repositories
 {
     public interface ITripCategoryService
     {
-        public Task<List<TripCategory>> ExploreActivities(int CategoryID);
+       
 
         public Task<List<TripCategory>> SelectTrip(string CategoryName);
     }

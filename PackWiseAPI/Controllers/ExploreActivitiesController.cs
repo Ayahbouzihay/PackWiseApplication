@@ -9,21 +9,21 @@ namespace PackWiseAPI.Controllers
     [ApiController]
     public class ExploreActivitiesController : Controller
     {
-        private readonly ITripCategoryService tripCategoryService;
-        public ExploreActivitiesController(ITripCategoryService tripCategoryService)
+        private readonly IExploreActivities exploreActivitiesService;
+        public ExploreActivitiesController(IExploreActivities exploreActivitiesService)
         {
-            this.tripCategoryService = tripCategoryService;
+            this.exploreActivitiesService = exploreActivitiesService;
         }
         [HttpGet("{CategoryID}")]
-        public async Task<List<TripCategory>> ExploreActivities(int CategoryID)
+        public async Task<List<Activity>> GetExploreActivities(int CategoryID)
         {
-            var exploreActivities = await tripCategoryService.ExploreActivities(CategoryID);
-            if (exploreActivities == null)
+            var activities = await exploreActivitiesService.GetExploreActivities(CategoryID);
+            if (activities == null)
            { 
                 //return NotFound();
             }
 
-          return exploreActivities;
+          return activities;
 
 
 
