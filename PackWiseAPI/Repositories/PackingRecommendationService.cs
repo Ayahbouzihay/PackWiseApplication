@@ -20,16 +20,7 @@ namespace PackWiseAPI.Repositories
             _dbContext = dbContext;
         }
         //Ayah-mounina Bouzihay get Packing Recommendation
-        public async Task<List<PackingRecommendation>> getPackingRecommendations(int travelerId, DateTime Date)
-        {
-            var travelerIdParam = new SqlParameter("@TravelerID", travelerId);
-            var DateParam = new SqlParameter("@Date", Date);
-            var packingRecommendations = await _dbContext.PackingRecommendation
-                .FromSqlRaw("EXECUTE spViewPackingRecommendations @TravelerID, @Date", travelerIdParam, DateParam)
-                .ToListAsync();
         
-            return packingRecommendations;
-        }
 
         public async Task<List<PackingRecommendation>> GetPackingRecommendations(int travelerId, DateTime Date)
         {

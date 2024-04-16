@@ -16,16 +16,8 @@ namespace PackWiseAPI.Repositories
         {
             _dbContextClass = dbContextClass;
         }
-        //Ayah-mounina Bouzihay
-        public async Task<List<TripCategory>> ExploreActivities(int CategoryID)
-        {
-            var param = new SqlParameter("@CategoryID", categoryId);
-            var activityNames = await _dbContextClass.TripCategory
-                                        .FromSqlRaw("exec spExploreActivities @CategoryID", param)
-                                        .Select(tc => tc.ActivityName)
-                                        .ToListAsync();
-            return activityNames;
-        }
+        
+        
         //Ayden Pratt
         public async Task<List<TripCategory>> selectTrip(string CategoryName)
         {

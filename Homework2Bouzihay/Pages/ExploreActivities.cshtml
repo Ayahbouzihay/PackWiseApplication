@@ -2,3 +2,26 @@
 @model Homework2Bouzihay.Pages.ExploreActivitiesModel
 @{
 }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="categorySelect">
+        <option value="1">Hiking</option>
+        <option value="2">Beach</option>
+        <option value="3">Skiing</option>
+        <option value="4">Camping</option>
+    </select>
+    <button type="button" onclick="displayActivitieslist()">Submit</button>
+
+    <div id="activityList">
+        <!-- Activities will be displayed here -->
+    </div>
+
+    <!-- Include the JavaScript file -->
+    <script src="js\site.js"></script>
+</body>
+</html>

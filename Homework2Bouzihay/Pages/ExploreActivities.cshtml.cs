@@ -8,5 +8,6 @@ namespace Homework2Bouzihay.Pages
         public void OnGet()
         {
         }
+
     }
 }

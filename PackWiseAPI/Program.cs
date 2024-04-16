@@ -8,6 +8,7 @@ using PackWiseAPI.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IExploreActivities, ExploreActivitiesService>();
 builder.Services.AddScoped<ITripCategoryService, TripCategoryService >();
 builder.Services.AddScoped<IPackingRecommendationService, PackingRecommendationService >();
 builder.Services.AddDbContext<DbContextClass>(options =>
@@ -29,18 +30,7 @@ builder.Services.AddCors(options =>
 
         );
 });
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowMyRazorPagesApp",
-        builder =>
-        {
-            builder.WithOrigins("https://localhost:7004")
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        }
 
-        );
-});
 
 var app = builder.Build();
 
