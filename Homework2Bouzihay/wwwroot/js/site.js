@@ -60,3 +60,10 @@ async function fetchRecommendations(travelerID, date) {
         //    table.appendChild(row);
         //});
     }
+
+
+async function displayActivities(categoryID) {
+    const response = await fetch(`https://localhost:7270/api/ExploreActivities/${categoryID}`);
+    const data = await response.json();
+
+}
