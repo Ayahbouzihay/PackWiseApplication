@@ -38,7 +38,7 @@ body {
 
 
 .action-button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: white;
     padding: 10px 20px;
@@ -54,13 +54,13 @@ body {
 
    
     .action-button:hover {
-        background-color: #45a049; /* Darker green */
+        background-color: #45a049; 
         color: white;
     }
 
 
 .weather-chart {
-    display: flex;
+    display: inline-block;
     flex-wrap: wrap;
     justify-content: left;
     max-width: 800px;
@@ -123,4 +123,20 @@ body {
 .offer-picture {
     max-width: 200px;
     margin-right: 100px
+}
+
+.dateSearchContainer {
+    display: flex;
+    align-items: center; 
+}
+
+    .dateSearchContainer .dateSearchPics {
+        margin-right: 75px;
+        display: flex; 
+    }
+
+.dateSearchPics img {
+    max-width: 225px;
+    height: auto;
+    margin-right: 10px;
 }

@@ -12,18 +12,26 @@
 </head>
 <html>
 <body>
-    <h2>The Date you have selected for this trip is </h2>
+    <h2 class="bigger-title centered-title">Thank you for selecting a date! </h2>
 
-    <div>
-        <h2>Get Packing Recommendations</h2>
-        <label for="travelerIDInput">Traveler ID:</label>
-        <input type="text" id="travelerIDInput" />
-        <br />
-        <label for="dateInput">Date:</label>
-        <input type="text" id="dateInput" />
-        <br />
-        <button onclick="getRecommendations()">Get Recommendations</button>
+    <div class="dateSearchContainer">
+        <div>
+            <h2>Please enter your Traveler ID to get your packing recommendation. </h2>
+            <label for="travelerIDInput">Traveler ID:</label>
+            <input class="bigger-select" type=" text" id="travelerIDInput" />
+            <br />
+            <label for="dateInput">Date:</label>
+            <input class="bigger-select" type=" text" id="dateInput" />
+            <br />
+            <button class="btn btn-primary" onclick="getRecommendations()">Get Recommendations</button>
+        </div>
+
+        <div class="dateSearchPics">
+            <img src="~/Pakcing.jpg" alt="Packing">
+            <img src="/Trip.jpg" alt="Trip">
+        </div>
     </div>
+
     <div>
         <h3>Recommendation Details</h3>
         <div class="weather-chart">
