@@ -79,7 +79,7 @@ Features:
 ![Screenshot 2024-04-17 234805](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/1dc961ad-a48b-4638-938d-519025493750)
 ![Screenshot 2024-04-17 234842](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/52868f2f-115c-45f1-bef7-2b4eec949afb)
 
-###Search Location and Input Dates (TripNames.cshtml) - (Ayah-mounina Bouzihay)
+### Search Location and Input Dates (TripNames.cshtml) - (Ayah-mounina Bouzihay)
 Description:
 This dynamic page enables users to choose a location and date for their selected trip category. It provides sleek input boxes for entering the location and selecting the date.
 Features:
