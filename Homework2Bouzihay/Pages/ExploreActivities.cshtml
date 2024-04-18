@@ -3,25 +3,73 @@
 @{
     var categoryID = HttpContext.Request.Query["categoryID"];
 }
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Explore Activities</title>
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 </head>
 <body>
-    <select id="categorySelect">
-        <option value="1">Hiking</option>
-        <option value="2">Beach</option>
-        <option value="3">Skiing</option>
-        <option value="4">Camping</option>
-    </select>
-    <button class="btn btn-primary" type="button" onclick="displayActivitieslist()">Submit</button>
+    <div class="container">
+        <h2 class="bigger-title centered-title">Explore Activities</h2>
 
-    <div id="activityList"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Choose a Category</h4>
+                <select id="categorySelect" class="btn btn-info">
+                    <option value="default">Choose a category</option>
+                    <option value="1">Hiking</option>
+                    <option value="2">Beach</option>
+                    <option value="3">Skiing</option>
+                    <option value="4">Camping</option>
+                </select>
+                <button class="btn btn-primary" type="button" onclick="displayActivitieslist()">Submit</button>
+            </div>
+            <div class="col-md-6">
+                <img src="images/hiking.jpg" class="img-fluid rounded" alt="Hiking Image">
+            </div>
+        </div>
+
+        <div id="activityList" class="activity-container mt-5"></div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Categories</h3>
+                <ul>
+                    <li><strong>Hiking:</strong> Explore the great outdoors and enjoy breathtaking views.</li>
+                    <img src="~/Hiking.jpg" alt="Beach" class="offer-picture">
+                    <li><strong>Beach:</strong> Relax on sandy shores and soak up the sun.</li>
+                    <img src="~/Beach.jpg" alt="Beach" class="offer-picture">
+                    <li><strong>Skiing:</strong> Hit the slopes and experience the thrill of winter sports.</li>
+                    <li><strong>Camping:</strong> Unplug and reconnect with nature under the stars.</li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h3>Testimonials</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Packwise made planning my hiking trip a breeze! I never forget any essential items now."</p>
+                            <footer class="blockquote-footer">John Doe</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="module">
-        DisplayActvities("@categoryID")
+        DisplayActivities("@categoryID")
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

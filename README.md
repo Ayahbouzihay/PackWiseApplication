@@ -1,3 +1,211 @@
+# PackWise Web Application
+
+## Project Overview
+PackWise is a web application designed to provide personalized packing recommendations based on weather predictions and user preferences. With PackWise, users can efficiently pack for various climates and activities, enhancing their travel experience.
+
+## Deployment Guide
+To deploy PackWise on a blank VM, follow these steps:
+
+1. **Database Setup**:
+   - Execute the SQL scripts provided in the `database` folder on your SQL Server to create the database schema.
+   - Ensure to execute the stored procedures for proper functionality.
+
+2. **Clone Repository**:
+   - Clone the repository from [GitHub](https://github.com/Ayahbouzihay/Homework2Bouzihay) to your local machine.
+
+3. **Configure Visual Studio**:
+   - Open the solution in Visual Studio.
+   - Navigate to the execute menu and go to settings.
+   - Start only the `PackWiseAPI` project and select none for `Homework2Bouzihay`.
+
+4. **Adjust Root Application**:
+   - Open `program.cs` in the `PackWise` application.
+   - Adjust the root application so the APIs can run properly.
+
+5. **Run the Application**:
+   - Stop debugging and go back into settings.
+   - Start both projects (`PackWiseAPI` and `Homework2Bouzihay`) and execute.
+## Testing Instructions
+Since PackWise currently relies on manually inputted data and does not have location or weather APIs integrated, specific dates, IDs, and categories must be used to test the functionality of the website. Below are some examples:
+
+- **Trip ID 1**:
+  - Date: March 16, 2024
+  - Category: 1
+
+- **Trip ID 2**:
+  - Date: April 10, 2024
+  - Category: 2
+
+- **Another Trip ID 2**:
+  - Date: April 11, 2024
+  - Category: 2
+
+## API Documentation
+### Explore Activities API (Ayah-mounina Bouzihay)
+- **Purpose**: Retrieves a list of activities based on the selected trip category.
+- **Inputs**: Category ID (unique identifier for the trip category)
+- **Outputs**: List of activities based on the category
+
+### Get Packing Recommendations API (Ayah-mounina bouzihay)
+- **Purpose**: Retrieves personalized packing recommendations for a specific trip date.
+- **Inputs**: Trip Date
+- **Outputs**: List of packing recommendations
+
+### Input Trip Dates API (Ayden Pratt) (to be combined with Get Packing Recommendations in the future) (Ayden Pratt)
+- **Purpose**: Allows users to input the dates of their trip.
+- **Inputs**: Date
+- **Outputs**: Returns a list of packing recommendations objects.
+- we realized a tad bit too late, that both our API's output packing recommendations. but we've been  using input trip Dates to intake the date and getPackingRecommendations to out put the recommendations.
+
+### Select Trip API (Ayden Pratt)
+- **Purpose**: Allows users to select the type of trip they will be taking.
+- **Inputs**: Category Name
+- **Outputs**: List of available trip categories.
+
+## Razor Pages
+
+### Homepage (`Index.cshtml`) - Ayah-mounina Bouzihay
+Description:
+The homepage serves as an introduction to the application and its features.
+Features:
+- Provides an overview of Packwise and its mission.
+- Offers options for users to explore activities, manage travel budgets, and get personalized packing recommendations.
+- Contains buttons linking to other pages such as Explore Activities, Travel Budget, and Select Trip Dates.
+
+### Select Trip Dates (`SelectTripDates.cshtml`) - Ayden Pratt
+Description:
+Allows users to select the type of trip they will be taking.
+Features:
+- Displays categories of trips such as hiking, beach, skiing, and camping.
+- Users can select a trip category from the dropdown menu and submit their choice.
+- Upon submission, users are redirected to a page to input trip dates and view personalized packing recommendations.
+
+### Explore Activities (`ExploreActivities.cshtml`) - (Ayah-mounina Bouzihay, Ayden Pratt)
+Description:
+Dynamic page showcasing activities related to the selected trip category.
+Features:
+- Users can select a trip category (e.g., hiking, beach) from the dropdown menu. 
+- Upon submission, displays a list of activities related to the chosen category.  
+- Activities are fetched from the Explore Activities API and displayed dynamically on the page. 
+
+### Personalized Packing Recommendations (`DateSearch.cshtml`) (Ayden Pratt, Ayah-mounina Bouzihay)
+Description:
+Allows users to input trip dates and retrieve personalized packing recommendations.
+Features:
+- Users can input their traveler ID and desired trip date to fetch recommendations.
+- Utilizes the Packing Recommendations API to retrieve packing suggestions based on user input.
+- Displays recommendations for clothing, toiletries, accessories, etc., tailored to the trip and weather conditions.
+
+### Travel Budget (`TravelBudget.cshtml`) (Ayah-mounina Bouzihay)
+Description:
+Displays estimated travel budget for different destinations.
+Features:
+- Shows estimated costs for transportation, accommodation, meals, and activities for destinations like Paris, Marrakesh, and Gaza.
+- Provides a breakdown of expenses in a tabular format for easy comparison.
+
+## Application Description
+PackWise offers personalized packing recommendations and activity suggestions to streamline the travel planning process. Users can select their trip type, input dates, and receive tailored packing lists and activity options.
+
+## Developer Documentation
+If a new group of developers were to take over PackWise, they would need to familiarize themselves with:
+
+- The structure of the codebase and the purpose of each file and directory.
+- API integration methods and data retrieval processes.
+- Database schema and data management procedures.
+- User interface components and design patterns.
+
+## Future Enhancements
+- Combine Input Trip Dates and Get Packing Recommendations APIs for streamlined functionality.
+- Remove the requirement for a traveler ID in the Get Packing Recommendations API.
+- Implement adjustments to allow non-members to try out the application before joining.
+
+## Monetization Strategy
+PackWise can generate revenue through:
+
+1. **Freemium Model**: Offering basic features for free with premium subscription plans for advanced features.
+2. **In-App Purchases**: Selling premium packing templates, travel guides, and ad-free experiences.
+3. **Advertising Revenue**: Displaying targeted advertisements and sponsored content.
+4. **Affiliate Marketing**: Earning commission through referrals to travel gear and products.
+
+## Conclusion
+PackWise aims to revolutionize travel planning by providing personalized packing recommendations and activity suggestions. With a diverse monetization strategy and potential for profitability, PackWise is poised for success in the travel tech industry.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Project Overview
 
 This project aims to develop a web application that provides personalized packing recommendations based on weather predictions and user preferences. With this application, users can efficiently pack for diverse climates, making their trips more comfortable and enjoyable.
