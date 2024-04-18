@@ -8,11 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        /* Sleeker input boxes */
+        input[type="text"],
+        input[type="date"] {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        
+
+    </style>
 </head>
 
 <h2 class="bigger-title centered-title" id="TripName" style="margin-bottom: 50px;">You have chosen to go <span id="chosenTrip"></span></h2>
 
-<div style=" text-align: center; margin-bottom: 50px; font-size: 20px;">
+<div style="text-align: center; margin-bottom: 50px; font-size: 20px;">
     <p>Please choose the location you would like to your <span id="chosenTrip"></span> trip</p>
     <form method="get" action="/LocationSearch" style="display: inline-block;">
         <label for="location">Select Location:</label>
@@ -31,7 +46,5 @@
 </div>
 
 <script type="module">
-      displayTripCat("@categoryName");
-
+    displayTripCat("@categoryName");
 </script>
-

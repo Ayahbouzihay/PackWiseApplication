@@ -18,10 +18,6 @@ To deploy PackWise on a blank VM, follow these steps:
    - Navigate to the execute menu and go to settings.
    - Start only the `PackWiseAPI` project and select none for `Homework2Bouzihay`.
 
-4. **Adjust Root Application**:
-   - Open `program.cs` in the `PackWise` application.
-   - Adjust the root application so the APIs can run properly.
-
 5. **Run the Application**:
    - Stop debugging and go back into settings.
    - Start both projects (`PackWiseAPI` and `Homework2Bouzihay`) and execute.

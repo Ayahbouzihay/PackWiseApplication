@@ -10,10 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Activities</title>
     <link rel="stylesheet" type="text/css" href="css/site.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -31,28 +30,50 @@
                 </select>
                 <button class="btn btn-primary" type="button" onclick="displayActivitieslist()">Submit</button>
             </div>
-            <div class="col-md-6">
-                <img src="images/hiking.jpg" class="img-fluid rounded" alt="Hiking Image">
             </div>
-        </div>
-
-        <div id="activityList" class="activity-container mt-5"></div>
+         <div id="activityList" class="activity-container mt-3"></div>
 
         <div class="row mt-5">
             <div class="col-md-6">
                 <h3>Categories</h3>
-                <ul>
-                    <li><strong>Hiking:</strong> Explore the great outdoors and enjoy breathtaking views.</li>
-                    <img src="~/Hiking.jpg" alt="Beach" class="offer-picture">
-                    <li><strong>Beach:</strong> Relax on sandy shores and soak up the sun.</li>
-                    <img src="~/Beach.jpg" alt="Beach" class="offer-picture">
-                    <li><strong>Skiing:</strong> Hit the slopes and experience the thrill of winter sports.</li>
-                    <li><strong>Camping:</strong> Unplug and reconnect with nature under the stars.</li>
-                </ul>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <img src="~/Hiking.jpg" alt="hiking" class="img-fluid rounded offer-picture">
+                        <p><strong>Hiking:</strong> Explore the great outdoors and enjoy breathtaking views.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <img src="~/Beach.jpg" alt="Beach" class="img-fluid rounded offer-picture">
+                        <p><strong>Beach:</strong> Relax on sandy shores and soak up the sun.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <img src="~/Skiing.jpg" alt="skiing" class="img-fluid rounded offer-picture">
+                        <p><strong>Skiing:</strong> Hit the slopes and experience the thrill of winter sports.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <img src="~/Camping.jpg" alt="camping" class="img-fluid rounded offer-picture">
+                        <p><strong>Camping:</strong> Unplug and reconnect with nature under the stars.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6">
                 <h3>Testimonials</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Packwise made planning my hiking trip a breeze! I never forget any essential items now."</p>
+                            <footer class="blockquote-footer">John Doe</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Packwise made planning my hiking trip a breeze! I never forget any essential items now."</p>
+                            <footer class="blockquote-footer">John Doe</footer>
+                        </blockquote>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">

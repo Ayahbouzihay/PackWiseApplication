@@ -174,11 +174,6 @@ body {
         display: flex; 
     }
 
-.dateSearchPics img {
-    max-width: 225px;
-    height: auto;
-    margin-right: 10px;
-}
 
 
 /* Add the font family to headings */
@@ -193,3 +188,16 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400; /* Adjust the font weight as needed */
     font-style: normal;
 }
+.form-group {
+    margin-bottom: 20px; /* Adjusted margin for better spacing */
+}
+
+.form-control {
+    border: 2px solid #007bff; /* Added border color for input squares */
+    border-radius: 5px; /* Added rounded corners for input squares */
+}
+
+
+    .btn-primary:hover {
+        background-color: #0056b3; /* Adjusted hover color for buttons */
+    }

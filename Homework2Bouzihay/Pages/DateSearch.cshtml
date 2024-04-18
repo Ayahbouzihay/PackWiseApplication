@@ -5,36 +5,70 @@
     var travelerID = HttpContext.Request.Query["travelerID"];
 }
 <head>
-    
-        <link rel="stylesheet" type="text/css" href="css/site.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" type="text/css" href="css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
-    <link rel="stylesheet" type="text/css" href="css/site.css">
-</head>
-<html>
-<body>
-    <h2 class="bigger-title centered-title">Thank you for selecting a date! </h2>
+    <style>
+        .dateSearchContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
 
+        .form-group {
+            margin-right: 20px;
+        }
+
+        .dateSearchPics {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .picture-container {
+            width: 300px;
+            border-radius: 15px;
+            background-color: lightgray; /* Background color for the image container */
+            padding: 10px; /* Adjust padding as needed */
+            margin-left: 20px; /* Adjust margin to create space between inputs and images */
+        }
+
+        .rounded-image {
+            width: 100%; /* Make the image fill the container */
+            border-radius: 15px;
+        }
+
+        .weather-chart {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
     <div class="dateSearchContainer">
         <div>
-            <h2>Please enter your Traveler ID to get your packing recommendation. </h2>
-            <label for="travelerIDInput">Traveler ID:</label>
-            <input class="bigger-select" type=" text" id="travelerIDInput" />
-            <br />
-            <label for="dateInput">Date:</label>
-            <input class="bigger-select" type=" text" id="dateInput" />
-            <br />
+            <h4>Please enter your Traveler ID to get your packing recommendation.</h4>
+            <div class="form-group">
+                <label for="travelerIDInput">Traveler ID:</label>
+                <input class="form-control" type="text" id="travelerIDInput" placeholder="Enter your Traveler ID">
+            </div>
+            <div class="form-group">
+                <label for="dateInput">Date:</label>
+                <input class="form-control" type="text" id="dateInput" placeholder="Enter the date">
+            </div>
             <button class="btn btn-primary" onclick="getRecommendations()">Get Recommendations</button>
         </div>
-
         <div class="dateSearchPics">
-            <img src="~/Pakcing.jpg" alt="Packing">
-            <img src="/Trip.jpg" alt="Trip">
+            <div class="picture-container">
+                <img src="~/Pakcing.jpg" alt="Packing" class="rounded-image">
+            </div>
+        
         </div>
     </div>
 
@@ -49,7 +83,7 @@
         <div class="weather-chart">
             <div class="weather-item">
                 <h3 class="weather-title">Date:</h3>
-                <div id="date" class="weather-data"><span></span></div> <!-- Corrected ID -->
+                <div id="date" class="weather-data"><span></span></div>
             </div>
         </div>
         <div class="weather-chart">
@@ -58,7 +92,6 @@
                 <div id="recommendations" class="weather-data"><span></span></div>
             </div>
         </div>
-
     </div>
     <script type="module">
         DateResults("@date");
@@ -66,4 +99,3 @@
         document.getElementById('dateInput').value = "@date";
     </script>
 </body>
-</html>
