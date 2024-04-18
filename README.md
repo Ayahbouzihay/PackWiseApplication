@@ -67,6 +67,7 @@ Features:
 - Provides an overview of Packwise and its mission.
 - Offers options for users to explore activities, manage travel budgets, and get personalized packing recommendations.
 - Contains buttons linking to other pages such as Explore Activities, Travel Budget, and Select Trip Dates.
+![Screenshot 2024-04-17 234736](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/7ce532f5-2a3c-4d2a-839b-799d59aa4205)
 
 ### Select Trip Dates (`SelectTripDates.cshtml`) - Ayden Pratt
 Description:
@@ -75,6 +76,18 @@ Features:
 - Displays categories of trips such as hiking, beach, skiing, and camping.
 - Users can select a trip category from the dropdown menu and submit their choice.
 - Upon submission, users are redirected to a page to input trip dates and view personalized packing recommendations.
+![Screenshot 2024-04-17 234805](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/1dc961ad-a48b-4638-938d-519025493750)
+![Screenshot 2024-04-17 234842](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/52868f2f-115c-45f1-bef7-2b4eec949afb)
+
+###Search Location and Input Dates (TripNames.cshtml) - (Ayah-mounina Bouzihay)
+Description:
+This dynamic page enables users to choose a location and date for their selected trip category. It provides sleek input boxes for entering the location and selecting the date.
+Features:
+- Users can choose a trip category and proceed to select a location and date.
+- Sleek input boxes enhance user experience for entering location and date information.
+- users can search for available locations or dates for their trip.
+- The page design ensures consistency with the site's aesthetic and usability standards.
+![Screenshot 2024-04-17 234904](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/dc7b0978-a8f6-4077-8114-75bf8280a70b)
 
 ### Explore Activities (`ExploreActivities.cshtml`) - (Ayah-mounina Bouzihay, Ayden Pratt)
 Description:
@@ -83,7 +96,7 @@ Features:
 - Users can select a trip category (e.g., hiking, beach) from the dropdown menu. 
 - Upon submission, displays a list of activities related to the chosen category.  
 - Activities are fetched from the Explore Activities API and displayed dynamically on the page. 
-
+![Screenshot 2024-04-18 001841](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/eb0d1732-1dd0-4a7c-8772-b1e67ff3e56a)
 ### Personalized Packing Recommendations (`DateSearch.cshtml`) (Ayden Pratt, Ayah-mounina Bouzihay)
 Description:
 Allows users to input trip dates and retrieve personalized packing recommendations.
@@ -91,6 +104,8 @@ Features:
 - Users can input their traveler ID and desired trip date to fetch recommendations.
 - Utilizes the Packing Recommendations API to retrieve packing suggestions based on user input.
 - Displays recommendations for clothing, toiletries, accessories, etc., tailored to the trip and weather conditions.
+![Screenshot 2024-04-17 234941](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/f7e4456e-21e2-4efa-9d78-6211f03f67b8)
+![Screenshot 2024-04-18 001910](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/34ac3e8e-c752-4a33-902e-c8d4461dc4e2)
 
 ### Travel Budget (`TravelBudget.cshtml`) (Ayah-mounina Bouzihay)
 Description:
@@ -98,6 +113,7 @@ Displays estimated travel budget for different destinations.
 Features:
 - Shows estimated costs for transportation, accommodation, meals, and activities for destinations like Paris, Marrakesh, and Gaza.
 - Provides a breakdown of expenses in a tabular format for easy comparison.
+![Screenshot 2024-04-17 234700](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/e4c911f4-55a6-4657-89a4-64885ca5b2c1)
 
 ## Application Description
 PackWise offers personalized packing recommendations and activity suggestions to streamline the travel planning process. Users can select their trip type, input dates, and receive tailored packing lists and activity options.
@@ -215,7 +231,7 @@ This project aims to develop a web application that provides personalized packin
 
 ## Competitive Analysis
 
-In the competitive analysis, I explored three websites—Packtor, PackPoint, and TripIt—that offer packing assistance and travel planning services. Each website showcases unique features and technologies:
+In the competitive analysis, I explored three websitesâ€”Packtor, PackPoint, and TripItâ€”that offer packing assistance and travel planning services. Each website showcases unique features and technologies:
 
 ### Website A: Packtor
 
