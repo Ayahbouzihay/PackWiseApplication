@@ -97,6 +97,9 @@ Features:
 - Upon submission, displays a list of activities related to the chosen category.  
 - Activities are fetched from the Explore Activities API and displayed dynamically on the page. 
 ![Screenshot 2024-04-18 001841](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/eb0d1732-1dd0-4a7c-8772-b1e67ff3e56a)
+![Screenshot 2024-04-18 001910](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/34ac3e8e-c752-4a33-902e-c8d4461dc4e2)
+
+
 ### Personalized Packing Recommendations (`DateSearch.cshtml`) (Ayden Pratt, Ayah-mounina Bouzihay)
 Description:
 Allows users to input trip dates and retrieve personalized packing recommendations.
@@ -105,7 +108,6 @@ Features:
 - Utilizes the Packing Recommendations API to retrieve packing suggestions based on user input.
 - Displays recommendations for clothing, toiletries, accessories, etc., tailored to the trip and weather conditions.
 ![Screenshot 2024-04-17 234941](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/f7e4456e-21e2-4efa-9d78-6211f03f67b8)
-![Screenshot 2024-04-18 001910](https://github.com/Ayahbouzihay/Homework2Bouzihay/assets/142525295/34ac3e8e-c752-4a33-902e-c8d4461dc4e2)
 
 ### Travel Budget (`TravelBudget.cshtml`) (Ayah-mounina Bouzihay)
 Description:
