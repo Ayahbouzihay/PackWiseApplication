@@ -1,15 +1,13 @@
 ﻿@page
 @model Homework2Bouzihay.Pages.TripNamesModel
-@{
-    var categoryName = HttpContext.Request.Query["categoryName"];
-}
+
+
 <head>
     <link rel="stylesheet" type="text/css" href="css/site.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <style>
-        /* Sleeker input boxes */
         input[type="text"],
         input[type="date"] {
             width: 200px;
@@ -18,33 +16,128 @@
             border-radius: 5px;
             margin-right: 10px;
             font-size: 16px;
+            margin-bottom: 15px;
         }
 
-        
+        .form-container {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
 
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
     </style>
 </head>
 
-<h2 class="bigger-title centered-title" id="TripName" style="margin-bottom: 50px;">You have chosen to go <span id="chosenTrip"></span></h2>
+<h2 class="bigger-title centered-title" id="TripName" style="margin-bottom: 50px;">
+    Trip Weather and Packing Recommendations
+</h2>
 
-<div style="text-align: center; margin-bottom: 50px; font-size: 20px;">
-    <p>Please choose the location you would like to your <span id="chosenTrip"></span> trip</p>
-    <form method="get" action="/LocationSearch" style="display: inline-block;">
-        <label for="location">Select Location:</label>
-        <input type="text" id="location" name="location">
-        <button class="btn btn-primary" type="submit">Search</button>
+<!-- Weather Form -->
+<div class="form-container">
+    <p>Please provide your trip details:</p>
+    <form id="weatherForm">
+        <label for="city">City:</label>
+        <input type="text" id="weatherCity" name="city" placeholder="Enter city" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="weatherState" name="state" placeholder="Enter state" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="weatherDate" name="date" required>
+
+        <button class="btn btn-primary" type="submit">Get Weather Details</button>
     </form>
 </div>
 
-<div style="text-align: center; font-size: 20px;">
-    <p>Please select the date when you would like to attend your <span id="chosenTrip"></span> trip</p>
-    <form method="get" action="/DateSearch" style="display: inline-block;">
-        <label for="date">Select Date:</label>
-        <input type="date" id="date" name="date">
-        <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-</div>
+<!-- Results container for displaying the weather data -->
+<div id="results"></div>
 
 <script type="module">
-    displayTripCat("@categoryName");
+    // Event listener for form submission
+    document.getElementById("weatherForm").addEventListener("submit", async function (event) {
+        event.preventDefault(); // Prevent the form from redirecting
+
+        const city = document.getElementById("weatherCity").value;
+        const state = document.getElementById("weatherState").value;
+        const date = document.getElementById("weatherDate").value;
+
+        try {
+            const response = await fetch("http://localhost:5000/get_weather_data", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ city, state, date }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                const resultsDiv = document.getElementById("results");
+                resultsDiv.innerHTML = `<h3>Weather Data for ${city}, ${state} on ${date}</h3>`;
+
+                // Create a table to display the results
+                let tableHtml = `
+                    <table border="1" cellpadding="10">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Temperature</th>
+                                <th>Wind Speed</th>
+                                <th>Wind Direction</th>
+                                <th>Forecast</th>
+                                <th>Humidity</th>
+                                <th>Precipitation</th>
+                                <th>Packing Recommendation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                // Loop through the weather data and add rows to the table
+                data.weather.forEach(detail => {
+                    tableHtml += `
+                        <tr>
+                            <td>${detail.name}</td>
+                            <td>${detail.temperature}</td>
+                            <td>${detail.wind_speed}</td>
+                            <td>${detail.wind_direction}</td>
+                            <td>${detail.forecast}</td>
+                            <td>${detail.humidity}</td>
+                            <td>${detail.precipitation}</td>
+                            <td>${detail.recommendation}</td>
+                        </tr>
+                    `;
+                });
+
+                tableHtml += `</tbody></table>`;
+                
+                // Insert the table HTML into the results container
+                resultsDiv.innerHTML += tableHtml;
+
+            } else {
+                alert(data.error || "An error occurred.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to fetch weather data.");
+        }
+    });
 </script>
